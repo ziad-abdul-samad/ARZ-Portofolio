@@ -4,7 +4,7 @@ import { BlogsPage } from "./features/Blogs";
 import { ContactPage } from "./features/Contact";
 import { HomePage } from "./features/Home";
 import { ProcessPage } from "./features/Process";
-// import { ProjectsPage } from "./features/Projects";
+import { ProjectsPage } from "./features/Projects";
 import { ServicesPage } from "./features/Services";
 import "./App.css"
 import Footer from "./components/Footer";
@@ -15,7 +15,7 @@ function App() {
       <HomePage />
       <AboutUsPage/>
       <ServicesPage/>
-      {/* <ProjectsPage/> */}
+      <ProjectsPage/>
       <ProcessPage/>
       <BlogsPage/>
       <ContactPage/>

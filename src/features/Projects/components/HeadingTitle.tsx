@@ -1,17 +1,38 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Image, Text, Box } from "@chakra-ui/react";
 
 const HeadingTitle = () => {
   return (
-    <>
-      <Flex flexDir={"column"} color={"white"} bg={"#0B0B0B"} alignItems={"flex-start"} px={"70px"} py={"50px"}>
-      <Text as={"h1"} fontSize={{ lg: "60px" }} fontWeight={700}>
-        Projects
-      </Text>
-      <Text fontSize={{ lg: "22px" }} fontWeight={300}>
-        See How We’ve Made a Difference
-      </Text>
+    <Box position="relative" bg={"#0B0B0B"} overflow="hidden">
+      <Flex
+        flexDir={"column"}
+        color={"white"}
+        alignItems={"flex-start"}
+        px={"70px"}
+        py={"100px"}
+        position="relative" 
+        zIndex={1}
+      >
+        <Image
+          src="image/projects-bg.png"
+          position={"absolute"}
+          zIndex={0}
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)" 
+          minW="100%" 
+          minH="100%" 
+          objectFit="cover"
+          opacity={0.5}
+        />
+
+        <Text as={"h1"} fontSize={{ lg: "60px" }} fontWeight={700}>
+          Projects
+        </Text>
+        <Text fontSize={{ lg: "22px" }} fontWeight={300}>
+          See How We've Made a Difference
+        </Text>
       </Flex>
-    </>
+    </Box>
   );
 };
 

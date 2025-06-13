@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Flex } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { selectedCategory } from "../store";
 
@@ -23,7 +23,6 @@ const CategoryToggle = () => {
 
   return (
     <Box width="100%" position={"relative"} padding="4"  bg={"#0B0B0B"} >
-        <Image src="image/projects-bg.png" position={"absolute"} zIndex={0} bottom={"0"}  />
       <Flex
         
         overflowX="auto"
