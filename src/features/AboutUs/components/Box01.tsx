@@ -14,15 +14,17 @@ const Box01 = () => {
         backdropFilter="blur(16px)"
         position={"relative"}
         zIndex={2}
+        h={"350px"}
       >
         <Box
           position={"absolute"}
           bottom={"0px"}
-          bg={"#629015"}
+          bg={""}
           zIndex={-2}
           width="100%"
           height="30%"
           borderRadius={"20px"}
+          
         ></Box>
         <Image src="svg/About/scale-image-about.svg" maxW={"90px"} ml={"20px"}></Image>
         <Text fontSize={{ lg: "20px" }} fontWeight={500} color={"#F2F2F2"} px={"20px"}>

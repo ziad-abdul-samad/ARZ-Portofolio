@@ -14,11 +14,12 @@ const Box02 = () => {
         backdropFilter="blur(16px)"
         position={"relative"}
         zIndex={2}
+        h={"350px"}
       >
         <Box
           position={"absolute"}
           bottom={"0px"}
-          bg={"#629015"}
+          bg={"#"}
           zIndex={-2}
           width="100%"
           height="30%"

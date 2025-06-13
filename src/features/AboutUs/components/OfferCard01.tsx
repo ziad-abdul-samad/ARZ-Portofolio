@@ -9,7 +9,6 @@ const OfferCard01 = () => {
       height={{ lg: "500px" }}
       width="100%"
     >
-      {/* Shared background image */}
       <Image
         src="/image/offer-card-image.png"
         alt="Background"
@@ -22,7 +21,6 @@ const OfferCard01 = () => {
         zIndex="0"
       />
 
-      {/* Blurred overlay only on left side */}
       <Box
         position="absolute"
         top="0"
@@ -34,7 +32,6 @@ const OfferCard01 = () => {
         zIndex="1"
       />
 
-      {/* Foreground content on top */}
       <Flex
         position="relative"
         zIndex="2"
@@ -44,8 +41,7 @@ const OfferCard01 = () => {
         justify="space-between"
         px={{ base: "20px", lg: "40px" }}
       >
-        {/* Left Content */}
-        <Box width={{ base: "100%", lg: "60%" }}>
+        <Box py={"50px"} width={{ base: "100%", lg: "60%" }}>
           <Text
             fontWeight={700}
             fontSize={{ lg: "56px", base: "36px" }}
@@ -54,8 +50,14 @@ const OfferCard01 = () => {
             Tailored Software Solutions
           </Text>
 
-          <Text color="white" fontWeight={300} fontSize={{ lg: "20px", base: "16px" }} mt="10px">
-            We don’t just build — we craft customized solutions that fit your unique vision, goals, and market needs
+          <Text
+            color="white"
+            fontWeight={300}
+            fontSize={{ lg: "20px", base: "16px" }}
+            mt="10px"
+          >
+            We don’t just build — we craft customized solutions that fit your
+            unique vision, goals, and market needs
           </Text>
 
           <Flex flexDirection="column" py="30px" gap="20px">
@@ -80,7 +82,6 @@ const OfferCard01 = () => {
           </Flex>
         </Box>
 
-        {/* Right side (clean image visible) */}
         <Box display={{ base: "none", lg: "block" }} width="40%" />
       </Flex>
     </Box>

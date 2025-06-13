@@ -1,6 +1,9 @@
-
-.swiper-button-prev, .swiper-button-next {
-  color: #6C6C6C ;
+.swiper-button-prev,
+.swiper-button-next {
+  color: #6c6c6c;
   font-weight: 900; /* Apply custom color */
- 
+}
+:root {
+  font-family: "Unbounded", sans-serif;
+  background-color: #010200 ;
 }

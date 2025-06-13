@@ -38,7 +38,7 @@ const ImageSlider = () => {
       padding="4"
       width="full"
       lgDown={{ width: "vw" }}
-      backgroundColor={"black"}
+      backgroundColor={"#0B0B0B"}
       color={"#D5D5D5"}
     >
       <Box

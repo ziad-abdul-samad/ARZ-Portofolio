@@ -10,6 +10,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ image, icon, title, description }) => {
   return (
     <Flex
+    h={"240px"}
       bg="#020202"
       borderRadius="15px"
       padding="20px"
@@ -23,7 +24,6 @@ const Card: React.FC<CardProps> = ({ image, icon, title, description }) => {
         borderRadius="8px"
         borderTopRightRadius={0}
         borderBottomRightRadius={0}
-        loading="lazy"
       />
       <Flex flexDir="column" alignItems="flex-start" gap="10px">
         <Image src={icon} alt={`${title} icon`} loading="lazy" />
