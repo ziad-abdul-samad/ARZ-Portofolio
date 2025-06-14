@@ -49,9 +49,19 @@ const HomeSection01 = () => {
               color={"white"}
               px="25px"
               py="10px"
-              borderBottom={"solid 5px #4C4C4C"}
-              borderRadius={"8px"}
+              position="relative"
+              _after={{
+                content: '""',
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                right: "0",
+                height: "5px",
+                background: "linear-gradient(to right, #4E4E4E, #262626)",
+                borderRadius: "0 0 8px 8px",
+              }}
               bg={"#2E2E2E"}
+              borderRadius={"8px"}
             >
               View Portfolio
             </Button>{" "}

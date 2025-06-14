@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
+
 const Cards = [
   {
     color: "#53B2E6",
@@ -25,26 +26,76 @@ const Cards = [
     desc: "We create seamless online shopping experience Whether B2B or B2C—we help brands sell smarter and scale faster",
   },
 ];
+
 const IndustriesSection = () => {
   return (
-    <>
-      <Flex justifyContent={"space-between"} alignItems={"baseline"} bg={"black"} px={"70px"} gap={"20px"}>
-        {Cards.map((card, index) => (
-          <Flex key={index} flexDir={"column"} justifyContent={"flex-start"} gap={"10px"} px={"30px"} py={"40px"}>
+    <Flex
+      justifyContent="space-between"
+      alignItems="flex-start"
+      bg="black"
+      px="70px"
+      py="60px"
+      gap="20px"
+      flexWrap="wrap"
+    >
+      {Cards.map((card, index) => (
+        <Box
+          key={index}
+          position="relative"
+          w="263.86px"
+          h="344.31px"
+          borderRadius="8.65px"
+          overflow="hidden"
+          _before={{
+            content: `""`,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            w: "100%",
+            h: "100%",
+            bg: "rgba(159, 254, 0, 1)",
+            filter: "blur(500px)",
+            zIndex: 0,
+          }}
+        >
+          <Box
+            position="relative"
+            zIndex={1}
+            background="rgba(0, 0, 0, 0.25)"
+            backdropFilter="blur(500px)"
+            borderRadius="8.65px"
+            h="100%"
+            p="30px"
+            display="flex"
+            flexDirection="column"
+            justifyContent="flex-start"
+            gap="15px"
+          >
             <Box
-              width={"40px"}
-              height={"40px"}
-              borderRadius={"full"}
-              alignSelf={"end"}
+              width="40px"
+              height="40px"
+              minH={"40px"}
+              borderRadius="full"
+              alignSelf="flex-end"
               bg={card.color}
-            ></Box>
-            <Image maxW={"80px"} pl={"10px"} src={card.icon} />
-            <Heading fontWeight={700} color={"white"} fontSize={"17px"}> {card.title}</Heading>
-            <Text fontWeight={400} color={"white"} fontSize={"12px"} maxW={"224px"}>{card.desc}</Text>
-          </Flex>
-        ))}
-      </Flex>
-    </>
+              
+            />
+            <Image maxW="70px" pl="10px" src={card.icon}  />
+            <Heading fontWeight={700} color="white" fontSize="17px">
+              {card.title}
+            </Heading>
+            <Text
+              fontWeight={400}
+              color="white"
+              fontSize="12px"
+              lineHeight="1.6"
+            >
+              {card.desc}
+            </Text>
+          </Box>
+        </Box>
+      ))}
+    </Flex>
   );
 };
 
