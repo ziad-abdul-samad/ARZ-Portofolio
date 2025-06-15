@@ -121,7 +121,7 @@ const HomeSection01 = () => {
           </Flex>
 
           <Flex justify="flex-start" alignItems="center" gap="30px" pt="30px">
-            {[
+            {[ 
               { num: "10+", text: "Team Experience Years", icon: "exp-icon-home" },
               { num: "12+", text: "Digital Services", icon: "digital-icon-home" },
               { num: "20+", text: "Successful Projects", icon: "rocket-icon-home" },
@@ -152,6 +152,7 @@ const HomeSection01 = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
+          {/* Existing bg hover image */}
           <MotionImg
             src="/image/logos-hover-bg.png"
             alt="hover-bg"
@@ -175,6 +176,36 @@ const HomeSection01 = () => {
               duration: 5,
               repeat: Infinity,
               ease: "easeInOut",
+            }}
+          />
+
+          {/* New additional bg hover image with offset */}
+          <MotionImg
+          
+            src="/image/white-bg-hoverlogos.png"
+            alt="white-hover-bg"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "80%",
+              objectFit: "contain",
+              top: "52%", // slight vertical offset
+              left: "52%", // slight horizontal offset
+              transformOrigin: "right center",
+              zIndex: 0,
+              filter: "brightness(1.5)", // optional slight brightness to differentiate
+            }}
+            animate={{
+              y: [35, -25, 85, 55, 35], // slightly different path for a nice effect
+              x: [65, 25, 5, -85, -15],
+              translateX: "-50%",
+              translateY: ["-50%", "calc(-50% - 8px)", "-50%"],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.2,
             }}
           />
 
