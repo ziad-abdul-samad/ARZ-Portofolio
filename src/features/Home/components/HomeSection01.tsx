@@ -1,10 +1,40 @@
-import { Flex, Heading, Image, Text, Box, Button } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import {
+  Flex,
+  Heading,
+  Image as ChakraImage,
+  Text,
+  Box,
+  Button,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+const MotionFlex = motion(Flex);
+const MotionImg = motion.img;
+
+const logos = [
+  "/svg/Home/home-logo.svg",
+  "/svg/Home/home-logo-lime.svg",
+  "/svg/Home/home-logo-white.svg",
+];
 
 const HomeSection01 = () => {
+  const [logoIndex, setLogoIndex] = useState(0);
+  const [prevLogoIndex, setPrevLogoIndex] = useState(0);
+  const [showingFirst, setShowingFirst] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrevLogoIndex(logoIndex);
+      setLogoIndex((prev) => (prev + 1) % logos.length);
+      setShowingFirst((s) => !s);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [logoIndex]);
+
   return (
-    <Box position="relative" width="100%" height="100vh" overflow="hidden">
-      {/* Background Image */}
-      <Image
+    <Box position="relative" overflow="hidden">
+      <ChakraImage
         src="image/home-bg.png"
         alt="Background"
         position="absolute"
@@ -17,36 +47,47 @@ const HomeSection01 = () => {
         zIndex="-1"
       />
 
-      {/* Content Section */}
       <Flex
-        px="70px"
+        px={{ base: "30px", lg: "70px" }}
+        py="60px"
         color="white"
         justify="space-between"
         alignItems="center"
         position="relative"
         height="100%"
+        flexDirection={{ base: "column", lg: "row" }}
+        gap={{ base: "40px", lg: "0" }}
       >
-        <Flex flexDir="column" gap="30px">
+        <MotionFlex
+          flexDir="column"
+          gap="25px"
+          maxW="600px"
+          py="40px"
+          initial={{ x: "-100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
           <Heading
-            fontSize={{ lg: "65px" }}
+            fontSize={{ base: "40px", lg: "65px" }}
             fontWeight={900}
             lineHeight="100%"
             color="#F2F2F2"
           >
             Dominating the digital jungle
           </Heading>
-          <Text fontSize={{ lg: "31px" }} fontWeight={700} color="#FEFEFE">
+          <Text fontSize={{ base: "22px", lg: "31px" }} fontWeight={700} color="#FEFEFE">
             Software & Marketing Solutions Engineered for Your Success
           </Text>
-          <Text fontSize={{ lg: "20px" }} fontWeight={300} color="#FEFEFE">
+          <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={300} color="#FEFEFE">
             We create marketing, branding, and software solutions that help
             businesses build their brands.
           </Text>
-          <Flex gap={"43px"} alignItems={"center"}>
+
+          <Flex gap="30px" alignItems="center" py="20px">
             <Button
-              fontSize={"13px"}
+              fontSize="13px"
               fontWeight={700}
-              color={"white"}
+              color="white"
               px="25px"
               py="10px"
               position="relative"
@@ -60,11 +101,11 @@ const HomeSection01 = () => {
                 background: "linear-gradient(to right, #4E4E4E, #262626)",
                 borderRadius: "0 0 8px 8px",
               }}
-              bg={"#2E2E2E"}
-              borderRadius={"8px"}
+              bg="#2E2E2E"
+              borderRadius="8px"
             >
               View Portfolio
-            </Button>{" "}
+            </Button>
             <Button
               borderBottom="8px solid #6C9B23"
               bg="#9BFF00"
@@ -76,55 +117,103 @@ const HomeSection01 = () => {
               fontWeight={700}
             >
               Hire us
-            </Button>{" "}
+            </Button>
           </Flex>
-          <Flex
-            justifyContent="flex-start"
-            alignItems="center"
-            gap="20px"
-            py="50px"
-          >
-            <Flex flexDir="column">
-              <Text fontSize={{ lg: "29px" }} fontWeight={500}>
-                10+
-              </Text>
-              <Flex justifyContent="flex-start" alignItems="center" gap="5px">
-                <Image src="/svg/Home/exp-icon-home.svg" alt="icon" />
-                <Text fontSize={{ lg: "12px" }} fontWeight={400}>
-                  Team Experience Years
+
+          <Flex justify="flex-start" alignItems="center" gap="30px" pt="30px">
+            {[
+              { num: "10+", text: "Team Experience Years", icon: "exp-icon-home" },
+              { num: "12+", text: "Digital Services", icon: "digital-icon-home" },
+              { num: "20+", text: "Successful Projects", icon: "rocket-icon-home" },
+            ].map((item, i) => (
+              <Flex key={i} flexDir="column">
+                <Text fontSize={{ lg: "29px" }} fontWeight={500}>
+                  {item.num}
                 </Text>
+                <Flex justify="flex-start" align="center" gap="5px">
+                  <ChakraImage src={`/svg/Home/${item.icon}.svg`} alt="icon" />
+                  <Text fontSize="12px" fontWeight={400}>
+                    {item.text}
+                  </Text>
+                </Flex>
               </Flex>
-            </Flex>
-            <Flex flexDir="column">
-              <Text fontSize={{ lg: "29px" }} fontWeight={500}>
-                12+
-              </Text>
-              <Flex justifyContent="flex-start" alignItems="center" gap="5px">
-                <Image src="/svg/Home/digital-icon-home.svg" alt="icon" />
-                <Text fontSize={{ lg: "12px" }} fontWeight={400}>
-                  Digital Services
-                </Text>
-              </Flex>
-            </Flex>
-            <Flex flexDir="column">
-              <Text fontSize={{ lg: "29px" }} fontWeight={500}>
-                20+
-              </Text>
-              <Flex justifyContent="flex-start" alignItems="center" gap="5px">
-                <Image src="/svg/Home/rocket-icon-home.svg" alt="icon" />
-                <Text fontSize={{ lg: "12px" }} fontWeight={400}>
-                  Successful Projects
-                </Text>
-              </Flex>
-            </Flex>
+            ))}
           </Flex>
-        </Flex>
-        <Image
-          src="/svg/Home/home-logo.svg"
-          alt="home-logo"
-          maxW="420px"
-          objectFit="contain"
-        />
+        </MotionFlex>
+
+        <MotionFlex
+          alignItems="center"
+          justifyContent="space-between"
+          width={{ base: "300px", lg: "420px" }}
+          height={{ base: "300px", lg: "420px" }}
+          position="relative"
+          flexShrink={0}
+          initial={{ x: "100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+        >
+          <MotionImg
+            src="/image/logos-hover-bg.png"
+            alt="hover-bg"
+            style={{
+              position: "absolute",
+              width: "400%",
+              height: "400%",
+              objectFit: "contain",
+              top: "50%",
+              left: "50%",
+              transformOrigin: "left center",
+              zIndex: 0,
+            }}
+            animate={{
+              y: [30, -30, 80, 50, 30],
+              x: [60, 20, 0, -90, -20],
+              translateX: "-50%",
+              translateY: ["-50%", "calc(-50% - 10px)", "-50%"],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+
+          <MotionImg
+            key="logo1"
+            src={logos[showingFirst ? logoIndex : prevLogoIndex]}
+            alt="logo"
+            style={{
+              position: "absolute",
+              maxWidth: "420px",
+              height: "100%",
+              objectFit: "contain",
+              top: 0,
+              left: 0,
+              zIndex: 2,
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+          <MotionImg
+            key="logo2"
+            src={logos[showingFirst ? prevLogoIndex : logoIndex]}
+            alt="logo"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+            }}
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+          />
+        </MotionFlex>
       </Flex>
     </Box>
   );
