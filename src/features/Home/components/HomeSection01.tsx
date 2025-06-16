@@ -34,17 +34,29 @@ const HomeSection01 = () => {
 
   return (
     <Box position="relative" overflow="hidden">
-      <ChakraImage
+      <MotionImg
         src="image/home-bg.png"
         alt="Background"
-        position="absolute"
-        top="0"
-        left="0"
-        width="100%"
-        height="100%"
-        objectFit="cover"
-        objectPosition="center"
-        zIndex="-1"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: -1,
+        }}
+        initial={{ scale: 1, x: 0, y: 0 }}
+        animate={{
+          scale: [1, 1.2, 1],
+          x: [0, -60, 0],
+          y: [0, -30, 0],
+        }}
+        transition={{
+          duration: 10,
+          ease: "easeInOut",
+          repeat: Infinity,
+        }}
       />
 
       <Flex
@@ -75,10 +87,18 @@ const HomeSection01 = () => {
           >
             Dominating the digital jungle
           </Heading>
-          <Text fontSize={{ base: "22px", lg: "31px" }} fontWeight={700} color="#FEFEFE">
+          <Text
+            fontSize={{ base: "22px", lg: "31px" }}
+            fontWeight={700}
+            color="#FEFEFE"
+          >
             Software & Marketing Solutions Engineered for Your Success
           </Text>
-          <Text fontSize={{ base: "16px", lg: "20px" }} fontWeight={300} color="#FEFEFE">
+          <Text
+            fontSize={{ base: "16px", lg: "20px" }}
+            fontWeight={300}
+            color="#FEFEFE"
+          >
             We create marketing, branding, and software solutions that help
             businesses build their brands.
           </Text>
@@ -121,10 +141,22 @@ const HomeSection01 = () => {
           </Flex>
 
           <Flex justify="flex-start" alignItems="center" gap="30px" pt="30px">
-            {[ 
-              { num: "10+", text: "Team Experience Years", icon: "exp-icon-home" },
-              { num: "12+", text: "Digital Services", icon: "digital-icon-home" },
-              { num: "20+", text: "Successful Projects", icon: "rocket-icon-home" },
+            {[
+              {
+                num: "10+",
+                text: "Team Experience Years",
+                icon: "exp-icon-home",
+              },
+              {
+                num: "12+",
+                text: "Digital Services",
+                icon: "digital-icon-home",
+              },
+              {
+                num: "20+",
+                text: "Successful Projects",
+                icon: "rocket-icon-home",
+              },
             ].map((item, i) => (
               <Flex key={i} flexDir="column">
                 <Text fontSize={{ lg: "29px" }} fontWeight={500}>
@@ -152,7 +184,6 @@ const HomeSection01 = () => {
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          {/* Existing bg hover image */}
           <MotionImg
             src="/image/logos-hover-bg.png"
             alt="hover-bg"
@@ -179,9 +210,7 @@ const HomeSection01 = () => {
             }}
           />
 
-          {/* New additional bg hover image with offset */}
           <MotionImg
-          
             src="/image/white-bg-hoverlogos.png"
             alt="white-hover-bg"
             style={{
@@ -189,14 +218,14 @@ const HomeSection01 = () => {
               width: "100%",
               height: "80%",
               objectFit: "contain",
-              top: "52%", // slight vertical offset
-              left: "52%", // slight horizontal offset
+              top: "52%",
+              left: "52%",
               transformOrigin: "right center",
               zIndex: 0,
-              filter: "brightness(1.5)", // optional slight brightness to differentiate
+              filter: "brightness(1.5)",
             }}
             animate={{
-              y: [35, -25, 85, 55, 35], // slightly different path for a nice effect
+              y: [35, -25, 85, 55, 35],
               x: [65, 25, 5, -85, -15],
               translateX: "-50%",
               translateY: ["-50%", "calc(-50% - 8px)", "-50%"],
