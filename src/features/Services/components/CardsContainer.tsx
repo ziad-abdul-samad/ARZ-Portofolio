@@ -49,7 +49,7 @@ const cardData = [
 const CardsContainer = () => {
   return (
     <Grid
-      gridTemplateColumns={["repeat(2, 1fr)"]}
+      gridTemplateColumns={{base:["repeat(1,1fr)"],md:["repeat(2, 1fr)"]}}
       placeItems="center"
       px={["20px", "60px", "120px"]}
       gap="20px"

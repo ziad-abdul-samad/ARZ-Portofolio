@@ -5,7 +5,7 @@ import OfferCard02 from "./OfferCard02";
 const OfferCardContainer = () => {
   return (
     <>
-      <Flex flexDir={"column"} px={"70px"} gap={"60px"} bg={"#0B0B0B"}>
+      <Flex flexDir={"column"} px={{base:"30px",md:"70px"}} gap={"60px"} bg={"#0B0B0B"}>
         <OfferCard01/>
         <OfferCard02/>
       </Flex>

@@ -6,7 +6,6 @@ const MotionFlex = motion(Flex);
 const MotionImage = motion(Image);
 
 const OfferCard01 = () => {
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,7 +68,6 @@ const OfferCard01 = () => {
       height={{ lg: "500px" }}
       width="100%"
     >
-      {/* Right side image - animated from right */}
       <MotionImage
         variants={rightSideVariants}
         src="/image/offer-card-image.png"
@@ -83,7 +81,6 @@ const OfferCard01 = () => {
         zIndex="0"
       />
 
-      {/* Blur overlay */}
       <MotionBox
         variants={leftSideVariants}
         position="absolute"
@@ -114,7 +111,7 @@ const OfferCard01 = () => {
           <MotionBox
             variants={itemVariants}
             fontWeight={700}
-            fontSize={{ lg: "56px", base: "36px" }}
+            fontSize={{ lg: "56px", base: "20px" }}
             color={"white"}
             as="div"
           >
@@ -125,7 +122,7 @@ const OfferCard01 = () => {
             variants={itemVariants}
             color="white"
             fontWeight={300}
-            fontSize={{ lg: "20px", base: "16px" }}
+            fontSize={{ lg: "20px", base: "12px" }}
             mt="10px"
             as="div"
           >
@@ -140,27 +137,27 @@ const OfferCard01 = () => {
             gap="20px"
           >
             <MotionFlex variants={itemVariants} alignItems="center" gap="10px">
-              <Image src="/svg/About/vision-icon-about.svg" alt="icon" />
-              <Text color="white" fontWeight={400} fontSize={{ lg: "15px" }}>
+              <Image src="/svg/About/vision-icon-about.svg" alt="icon" maxW={{base:"20px"}} />
+              <Text color="white" fontWeight={400} fontSize={{ base:"9px",lg: "15px" }}>
                 Custom-Built for Your Vision
               </Text>
             </MotionFlex>
             <MotionFlex variants={itemVariants} alignItems="center" gap="10px">
-              <Image src="/svg/About/scalable-icon-about.svg" alt="icon" />
-              <Text color="white" fontWeight={400} fontSize={{ lg: "15px" }}>
+              <Image src="/svg/About/scalable-icon-about.svg" alt="icon" maxW={{base:"20px"}} />
+              <Text color="white" fontWeight={400} fontSize={{ base:"9px",lg: "15px" }}>
                 Scalable & Flexible Architecture
               </Text>
             </MotionFlex>
             <MotionFlex variants={itemVariants} alignItems="center" gap="10px">
-              <Image src="/svg/About/capabilities-icon-about.svg" alt="icon" />
-              <Text color="white" fontWeight={400} fontSize={{ lg: "15px" }}>
+              <Image src="/svg/About/capabilities-icon-about.svg" alt="icon" maxW={{base:"20px"}} />
+              <Text color="white" fontWeight={400} fontSize={{ base:"9px",lg: "15px" }}>
                 Seamless Integration Capabilities
               </Text>
             </MotionFlex>
           </MotionFlex>
         </MotionBox>
 
-        <Box display={{ base: "none", lg: "block" }} width="40%" />
+        <Box display={{ base: "block", lg: "block" }} width="40%" />
       </MotionFlex>
     </MotionBox>
   );

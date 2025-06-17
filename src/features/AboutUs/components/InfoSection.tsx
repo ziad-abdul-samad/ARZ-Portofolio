@@ -21,7 +21,7 @@ const InfoSection = () => {
 
   return (
     <Box
-      px={{ base: "20px", md: "70px" }}
+      px={{ base: "30px", md: "70px" }}
       position="relative"
       overflow="hidden"
     >
@@ -91,11 +91,15 @@ const InfoSection = () => {
         zIndex={2}
         textAlign="center"
       >
-        <Text fontSize={{ base: "28px", lg: "36px" }} fontWeight={700}>
+        <Text
+          fontSize={{ base: "15px", lg: "36px" }}
+          textWrap={"nowrap"}
+          fontWeight={700}
+        >
           Ready to Accelerate Your Vision?
         </Text>
         <Text
-          fontSize={{ base: "18px", lg: "21px" }}
+          fontSize={{ base: "14px", lg: "21px" }}
           fontWeight={300}
           maxW="800px"
           px="20px"
@@ -103,8 +107,16 @@ const InfoSection = () => {
           Let's turn your next big idea into powerful digital reality.
         </Text>
 
-        <Flex gap="50px" py="20px" align="center" wrap="wrap" justify="center">
+        <Flex
+          gap={{ base: "25px", md: "50px" }}
+          py="20px"
+          align="center"
+          wrap="wrap"
+          justify="center"
+          flexDir={{ base: "column", md: "row" }}
+        >
           <Button
+            width={{ md: "fit", base: "300px" }}
             fontSize="13px"
             fontWeight={700}
             color="white"
@@ -128,6 +140,7 @@ const InfoSection = () => {
           </Button>
 
           <Button
+            width={{ md: "fit", base: "300px" }}
             borderBottom="8px solid #6C9B23"
             bg="#9BFF00"
             color="black"

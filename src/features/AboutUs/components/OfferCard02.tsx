@@ -115,9 +115,10 @@ const OfferCard02 = () => {
           <MotionBox
             variants={itemVariants}
             fontWeight={700}
-            fontSize={{ lg: "56px", base: "36px" }}
+            fontSize={{ lg: "56px", base: "20px" }}
             color={"white"}
             as="div"
+            my={"30px"}
           >
             Strategic Digital Growth
           </MotionBox>
@@ -126,7 +127,7 @@ const OfferCard02 = () => {
             variants={itemVariants}
             color="white"
             fontWeight={300}
-            fontSize={{ lg: "20px", base: "16px" }}
+            fontSize={{ lg: "20px", base: "12px" }}
             mt="10px"
             as="div"
           >
@@ -142,14 +143,14 @@ const OfferCard02 = () => {
             alignItems={"start"}
           >
             <MotionFlex variants={itemVariants} alignItems="center" gap="10px">
-              <Image src="/svg/About/cross-icon-about.svg" alt="icon" />
-              <Text color="white" fontWeight={400} fontSize={{ lg: "15px" }}>
+              <Image src="/svg/About/cross-icon-about.svg" alt="icon" maxW={{base:"20px"}} />
+              <Text color="white" fontWeight={400} fontSize={{ base:"9px",lg: "15px" }}>
                 Cross-Platform Optimization
               </Text>
             </MotionFlex>
             <MotionFlex variants={itemVariants} alignItems="center" gap="10px">
-              <Image src="/svg/About/market-icon-about.svg" alt="icon" />
-              <Text color="white" fontWeight={400} fontSize={{ lg: "15px" }}>
+              <Image src="/svg/About/market-icon-about.svg" alt="icon"  maxW={{base:"20px"}}/>
+              <Text color="white" fontWeight={400} fontSize={{ base:"9px",lg: "15px" }}>
                 Market Understanding
               </Text>
             </MotionFlex>
@@ -159,16 +160,15 @@ const OfferCard02 = () => {
               gap="14px"
               pl={"2px"}
             >
-              <Image src="/svg/About/creative-icon-about.svg" alt="icon" />
-              <Text color="white" fontWeight={400} fontSize={{ lg: "15px" }}>
+              <Image src="/svg/About/creative-icon-about.svg" alt="icon" maxW={{base:"20px"}} />
+              <Text color="white" fontWeight={400} fontSize={{ base:"9px",lg: "15px" }}>
                 Creative Problem Solving
               </Text>
             </MotionFlex>
           </MotionFlex>
         </MotionBox>
 
-        {/* Right side (clean image visible) */}
-        <Box display={{ base: "none", lg: "block" }} width="40%" />
+        <Box display={{ base: "block", lg: "block" }} width="40%" />
       </MotionFlex>
     </MotionBox>
   );

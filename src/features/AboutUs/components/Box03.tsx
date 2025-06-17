@@ -7,14 +7,14 @@ const Box03 = () => {
         flexDir={"column"}
         py={"50px"}
         maxW={"400px"}
-        alignItems={"flex-start"}
+        alignItems={{ base: "center", md: "flex-start" }}
         gap={"10px"}
         bg={"#19191861"}
         borderRadius={"20px"}
         backdropFilter="blur(16px)"
         position={"relative"}
         zIndex={2}
-        h={"350px"}
+        h={{ base: "fit", md: "350px" }}
       >
         <Box
           position={"absolute"}
@@ -27,11 +27,11 @@ const Box03 = () => {
         ></Box>
         <Image
           src="svg/About/strategy-image-about.svg"
-          maxW={"90px"}
-          ml={"20px"}
+          maxW={{ base: "46px", md: "90px" }}
+          ml={{base:"none",md:"20px"}}
         ></Image>
         <Text
-          fontSize={{ lg: "20px" }}
+          fontSize={{ base: "12px", lg: "20px" }}
           fontWeight={500}
           color={"#F2F2F2"}
           px={"20px"}
@@ -39,8 +39,8 @@ const Box03 = () => {
           Strategy-Led Execution
         </Text>
         <Text
-          fontSize={{ lg: "16px" }}
-          fontWeight={300}
+          textAlign={{ base: "center", md: "left" }}
+          fontSize={{ base: "10px", lg: "16px" }}          fontWeight={300}
           color={"#F2F2F2"}
           px={"20px"}
         >

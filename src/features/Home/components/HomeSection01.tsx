@@ -8,6 +8,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
+import { useBreakpointValue } from "@chakra-ui/react";
 
 const MotionFlex = motion(Flex);
 const MotionImg = motion.img;
@@ -31,6 +32,8 @@ const HomeSection01 = () => {
     }, 2000);
     return () => clearInterval(interval);
   }, [logoIndex]);
+  const isMobile = useBreakpointValue({ base: true, lg: false });
+  const logoMaxWidth = useBreakpointValue({ base: "220px", lg: "420px" });
 
   return (
     <Box position="relative" overflow="hidden">
@@ -49,7 +52,8 @@ const HomeSection01 = () => {
         initial={{ scale: 1, x: 0, y: 0 }}
         animate={{
           scale: [1, 1.2, 1],
-          x: [0, -60, 0],
+          // To Do: reduce x scaling on mobile screen
+          x: isMobile ? 0 : [0, -60, 0], // No x-axis movement on mobile
           y: [0, -30, 0],
         }}
         transition={{
@@ -60,7 +64,7 @@ const HomeSection01 = () => {
       />
 
       <Flex
-        px={{ base: "30px", lg: "70px" }}
+        px={{ base: "10px", lg: "70px" }}
         py="60px"
         color="white"
         justify="space-between"
@@ -80,7 +84,8 @@ const HomeSection01 = () => {
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <Heading
-            fontSize={{ base: "40px", lg: "65px" }}
+            fontSize={{ base: "30px", lg: "65px" }}
+            textAlign={{ base: "center", sm: "left" }}
             fontWeight={900}
             lineHeight="100%"
             color="#F2F2F2"
@@ -88,7 +93,8 @@ const HomeSection01 = () => {
             Dominating the digital jungle
           </Heading>
           <Text
-            fontSize={{ base: "22px", lg: "31px" }}
+            fontSize={{ base: "13px", lg: "31px" }}
+            textAlign={{ base: "center", sm: "left" }}
             fontWeight={700}
             color="#FEFEFE"
           >
@@ -98,13 +104,21 @@ const HomeSection01 = () => {
             fontSize={{ base: "16px", lg: "20px" }}
             fontWeight={300}
             color="#FEFEFE"
+            display={{ base: "none", sm: "block" }}
           >
             We create marketing, branding, and software solutions that help
             businesses build their brands.
           </Text>
 
-          <Flex gap="30px" alignItems="center" py="20px">
+          <Flex
+            gap={{ base: "18px", sm: "30px" }}
+            px={{ base: "30px" }}
+            alignItems="center"
+            py="20px"
+            flexDir={{ base: "column", sm: "row" }}
+          >
             <Button
+              w={{ base: "full", sm: "fit" }}
               fontSize="13px"
               fontWeight={700}
               color="white"
@@ -127,6 +141,7 @@ const HomeSection01 = () => {
               View Portfolio
             </Button>
             <Button
+              w={{ base: "full", sm: "fit" }}
               borderBottom="8px solid #6C9B23"
               bg="#9BFF00"
               color="black"
@@ -140,7 +155,13 @@ const HomeSection01 = () => {
             </Button>
           </Flex>
 
-          <Flex justify="flex-start" alignItems="center" gap="30px" pt="30px">
+          <Flex
+            justify={{ base: "center", sm: "flex-start" }}
+            alignItems="center"
+            gap="30px"
+            pt="30px"
+            flexWrap={{ base: "wrap" }}
+          >
             {[
               {
                 num: "10+",
@@ -158,13 +179,21 @@ const HomeSection01 = () => {
                 icon: "rocket-icon-home",
               },
             ].map((item, i) => (
-              <Flex key={i} flexDir="column">
-                <Text fontSize={{ lg: "29px" }} fontWeight={500}>
+              <Flex key={i} flexDir="column" alignItems={{ base: "center" }}>
+                <Text fontSize={{ base: "17px", lg: "29px" }} fontWeight={500}>
                   {item.num}
                 </Text>
                 <Flex justify="flex-start" align="center" gap="5px">
-                  <ChakraImage src={`/svg/Home/${item.icon}.svg`} alt="icon" />
-                  <Text fontSize="12px" fontWeight={400}>
+                  <ChakraImage
+                    w={{ base: "10px" }}
+                    src={`/svg/Home/${item.icon}.svg`}
+                    alt="icon"
+                  />
+                  <Text
+                    fontSize={{ base: "8px", lg: "12px" }}
+                    fontWeight={400}
+                    textWrap={"nowrap"}
+                  >
                     {item.text}
                   </Text>
                 </Flex>
@@ -244,12 +273,14 @@ const HomeSection01 = () => {
             alt="logo"
             style={{
               position: "absolute",
-              maxWidth: "420px",
+              maxWidth: logoMaxWidth,
               height: "100%",
               objectFit: "contain",
               top: 0,
               left: 0,
               zIndex: 2,
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -268,6 +299,8 @@ const HomeSection01 = () => {
               top: 0,
               left: 0,
               zIndex: 1,
+              marginLeft: "auto",
+              marginRight: "auto",
             }}
             initial={{ opacity: 1 }}
             animate={{ opacity: 0 }}
