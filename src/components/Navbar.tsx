@@ -1,31 +1,53 @@
-import { useState } from "react";
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Link,
-  VStack,
-} from "@chakra-ui/react";
+import { useState, useEffect, useMemo } from "react";
+import { Box, Button, Flex, Image, Link, VStack } from "@chakra-ui/react";
 import { FiMenu, FiX } from "react-icons/fi";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeLink, setActiveLink] = useState<string>("#Home");
 
-  const navLinks = [
-    { label: "Home", href: "#Home" },
-    { label: "About Us", href: "#AboutUs" },
-    { label: "Services", href: "#Services" },
-    { label: "Our Projects", href: "#OurProjects" },
-    { label: "Our Process", href: "#OurProcess" },
-    { label: "Blogs", href: "#Blogs" },
-  ];
+  const navLinks = useMemo(
+    () => [
+      { label: "Home", href: "#Home" },
+      { label: "About Us", href: "#AboutUs" },
+      { label: "Services", href: "#Services" },
+      { label: "Our Projects", href: "#OurProjects" },
+      { label: "Our Process", href: "#OurProcess" },
+      { label: "Blogs", href: "#Blogs" },
+    ],
+    []
+  );
 
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight / 3;
+      let currentSection = "#Home";
+
+      for (const link of navLinks) {
+        const section = document.querySelector(link.href);
+        if (section) {
+          const top = section.getBoundingClientRect().top + window.scrollY;
+          if (scrollPos >= top) {
+            currentSection = link.href;
+          }
+        }
+      }
+
+      setActiveLink(currentSection);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [navLinks]);
 
   return (
     <>
@@ -55,17 +77,28 @@ const Navbar = () => {
               color="white"
               px={activeLink === link.href ? "20px" : undefined}
               py={activeLink === link.href ? "8px" : undefined}
-              bg={activeLink === link.href ? "rgba(255, 255, 255, 0.11)" : undefined}
+              bg={
+                activeLink === link.href
+                  ? "rgba(255, 255, 255, 0.11)"
+                  : undefined
+              }
               borderRadius={activeLink === link.href ? "9px" : undefined}
               onClick={() => handleLinkClick(link.href)}
-              _hover={{ textDecoration: "none", bg: "rgba(255, 255, 255, 0.11)" }}
+              _hover={{
+                textDecoration: "none",
+                bg: "rgba(255, 255, 255, 0.11)",
+              }}
             >
               {link.label}
             </Link>
           ))}
         </Flex>
 
-        <Flex display={{ base: "none", lg: "flex" }} gap="30px" alignItems="center">
+        <Flex
+          display={{ base: "none", lg: "flex" }}
+          gap="30px"
+          alignItems="center"
+        >
           <Button
             fontSize="13px"
             fontWeight={700}
@@ -139,11 +172,16 @@ const Navbar = () => {
         p="25px"
         transition="right 0.3s ease-in-out"
       >
-        <Flex justify="flex-end" fontSize="25px" cursor="pointer" onClick={() => setIsOpen(false)}>
+        <Flex
+          justify="flex-end"
+          fontSize="25px"
+          cursor="pointer"
+          onClick={() => setIsOpen(false)}
+        >
           <FiX />
         </Flex>
 
-        <VStack align="center" my="20px" fontSize="16px" mt="80px" >
+        <VStack align="center" my="20px" fontSize="16px" mt="80px">
           {navLinks.map((link) => (
             <Link
               color="white"
@@ -152,11 +190,18 @@ const Navbar = () => {
               onClick={() => handleLinkClick(link.href)}
               px={activeLink === link.href ? "20px" : undefined}
               py={activeLink === link.href ? "8px" : undefined}
-              bg={activeLink === link.href ? "rgba(255, 255, 255, 0.11)" : undefined}
+              bg={
+                activeLink === link.href
+                  ? "rgba(255, 255, 255, 0.11)"
+                  : undefined
+              }
               borderRadius={activeLink === link.href ? "9px" : undefined}
-              w="fit"
+              w="fit-content"
               textAlign="center"
-              _hover={{ textDecoration: "none", bg: "rgba(255, 255, 255, 0.11)" }}
+              _hover={{
+                textDecoration: "none",
+                bg: "rgba(255, 255, 255, 0.11)",
+              }}
             >
               {link.label}
             </Link>
