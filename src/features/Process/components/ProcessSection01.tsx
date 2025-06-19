@@ -3,15 +3,16 @@ import { motion } from "framer-motion";
 
 const ProcessSection01 = () => {
   return (
-    <Box position="relative">
+    <Box position="relative" minH={{ base: "400px", md: "600px" }}>
       <Image
         src="image/process-bg.png"
-        bg="#0B0B0B"
-        zIndex={-1}
         position="absolute"
         top={0}
         left={0}
+        width="100%"
+        height="100%"
         objectFit="cover"
+        zIndex={-1}
       />
 
       <Flex
@@ -19,11 +20,15 @@ const ProcessSection01 = () => {
         gap="20px"
         justifyContent="center"
         alignItems="center"
+        height="100%"
+        px={{ base: "20px", md: 0 }}
+        textAlign="center"
       >
         <Text
           fontWeight={700}
           fontSize={{ base: "25px", md: "56px" }}
           color="white"
+          py={"50px"}
         >
           Our process
         </Text>
@@ -46,11 +51,10 @@ const ProcessSection01 = () => {
         </Text>
       </Flex>
 
-      {/* Animated images with larger sticky circles */}
       <Flex
         justifyContent="center"
         alignItems="center"
-        my={"20px"}
+        my="20px"
         px={{ base: "30px" }}
       >
         {[
@@ -100,7 +104,7 @@ const ProcessSection01 = () => {
         ))}
       </Flex>
 
-      <Flex mt="180px" mb={"20px"}>
+      <Flex mt="180px"  py={"40px"}>
         <Button
           borderBottom="8px solid #6C9B23"
           bg="#9BFF00"

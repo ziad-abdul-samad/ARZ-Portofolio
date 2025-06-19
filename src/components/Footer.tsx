@@ -15,11 +15,11 @@ const Footer = () => {
       bgSize="cover"
       bgPos="center"
       py={10}
-      px={"140px"}
+      px={{base:"30px",md:"140px"}}
     >
-      <Flex justifyContent={"start"} alignItems={"baseline"} gap={"50px"}>
+      <Flex justifyContent={{base:"center",md:"start"}} alignItems={"baseline"} gap={"50px"} pt={"100px"}>
         <Flex flexDir={"column"} justifyContent={"flex-start"} gap={"5px"}>
-          <Flex alignItems={"center"} gap={"5px"}>
+          <Flex alignItems={"center"} gap={"5px"} justifyContent={{base:"center" , md:"start"}}>
             <Image w={"47px"} src="svg/Footer/arz-logo-footer.svg" />
             <Text fontWeight={400} fontSize={"36px"} color={"white"}>
               ARZ
@@ -29,7 +29,7 @@ const Footer = () => {
           <Text fontWeight={400} fontSize={"21px"} color={"white"}>
             Ape Revolution Zone
           </Text>
-          <Flex alignItems={"center"} color={"white"} gap={"4px"}>
+          <Flex alignItems={"center"} justifyContent={{base:"center" , md:"start"}} color={"white"} gap={"4px"}>
             <FaFacebook />
             <FaInstagram />
             <FaLinkedin />
@@ -38,7 +38,7 @@ const Footer = () => {
             <IoLogoWhatsapp />
           </Flex>
         </Flex>
-        <Flex alignItems={"baseline"} gap={"10px"} fontWeight={400} color={"#C8C8C8"}>
+        <Flex alignItems={"baseline"} gap={"10px"} fontWeight={400} color={"#C8C8C8"} display={{base:"none" , md:"block"}}>
           <VStack>
             <Text>Home</Text>
             <Text>About Us</Text>

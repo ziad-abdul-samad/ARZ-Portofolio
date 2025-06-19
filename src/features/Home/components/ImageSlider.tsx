@@ -37,9 +37,10 @@ const ImageSlider = () => {
       overflow="hidden"
       padding="4"
       width="full"
-      lgDown={{ width: "vw" }}
+      lgDown={{ width: "full" }}
       backgroundColor={"#0B0B0B"}
       color={"#D5D5D5"}
+      px={"30px"}
     >
       <Box
         position="absolute"
@@ -51,7 +52,7 @@ const ImageSlider = () => {
         zIndex="1"
       />
 
-      <HStack gap="16" transform={`translateX(${txValue}%)`}>
+      <HStack  gap="16" transform={`translateX(${txValue}%)`}>
         {logos.map((logo, index) => (
           <Image key={index} src={logo} />
         ))}

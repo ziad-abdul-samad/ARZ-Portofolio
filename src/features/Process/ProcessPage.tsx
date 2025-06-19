@@ -9,13 +9,15 @@ import TechnologiesSection from "./components/TechnologiesSection";
 export default function ProcessPage() {
   return (
     <>
-    <ProcessSection01/>
-    <ProcessSection02/>
-    <IndustriesSection/>
-    <StrategicInfoSection/>
-    <TechnologiesSection/>
-    <GetStartedSection/>
-    <FeedBackSection/>
+      <section id="OurProcess">
+        <ProcessSection01 />
+        <ProcessSection02 />
+        <IndustriesSection />
+        <StrategicInfoSection />
+        <TechnologiesSection />
+        <GetStartedSection />
+        <FeedBackSection />
+      </section>
     </>
   );
 }

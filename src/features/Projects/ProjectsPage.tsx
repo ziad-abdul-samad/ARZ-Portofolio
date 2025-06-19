@@ -5,9 +5,11 @@ import ProjectsCard from "./components/ProjectCard";
 export default function ProjectsPage() {
   return (
     <>
-    <HeadingTitle/>
-    <CategoryToggle/>
-    <ProjectsCard/>
+      <section id="OurProjects">
+        <HeadingTitle />
+        <CategoryToggle />
+        <ProjectsCard />
+      </section>
     </>
   );
 }

@@ -5,9 +5,11 @@ import BlogsSection from "./components/BlogsSection";
 export default function BlogsPage() {
   return (
     <>
-    <BlogsHeading/>
-    <BlogsSection/>
-    <BlogsContainer/>
+      <section id="Blogs">
+        <BlogsHeading />
+        <BlogsSection />
+        <BlogsContainer />
+      </section>
     </>
   );
 }

@@ -3,9 +3,8 @@ import { Button, Flex, Image, Box } from "@chakra-ui/react";
 const BlogsContainer = () => {
   return (
     <Box bg={"#010200"} zIndex={1} position="relative" pb="200px">
-  
       <Flex
-        px={"70px"}
+        px={{base:"30px",md:"70px"}}
         flexDir={"column"}
         justifyContent={"center"}
         alignItems={"center"}
@@ -18,7 +17,7 @@ const BlogsContainer = () => {
           py={"30px"}
         >
           <Flex
-            flexBasis={"300px"}
+            flexBasis={{ base: "100px", md: "300px" }}
             justifyContent={"center"}
             alignItems={"center"}
             padding={"10px"}
@@ -28,7 +27,7 @@ const BlogsContainer = () => {
             <Image src="image/blog-image01.png" />
           </Flex>
           <Flex
-            flexBasis={"300px"}
+            flexBasis={{ base: "100px", md: "300px" }}
             justifyContent={"center"}
             alignItems={"center"}
             padding={"10px"}
@@ -38,7 +37,7 @@ const BlogsContainer = () => {
             <Image src="image/blog-image02.png" />
           </Flex>
           <Flex
-            flexBasis={"300px"}
+            flexBasis={{ base: "100px", md: "300px" }}
             justifyContent={"center"}
             alignItems={"center"}
             padding={"10px"}
@@ -48,6 +47,7 @@ const BlogsContainer = () => {
             <Image src="image/blog-image03.png" />
           </Flex>
           <Flex
+            flexBasis={{ base: "100px", md: "300px" }}
             justifyContent={"center"}
             alignItems={"center"}
             padding={"10px"}
@@ -57,6 +57,7 @@ const BlogsContainer = () => {
             <Image src="image/blog-image04.png" />
           </Flex>
           <Flex
+            flexBasis={{ base: "100px", md: "300px" }}
             justifyContent={"center"}
             alignItems={"center"}
             padding={"10px"}
@@ -66,6 +67,7 @@ const BlogsContainer = () => {
             <Image src="image/blog-image05.png" />
           </Flex>
           <Flex
+            flexBasis={{ base: "100px", md: "300px" }}
             justifyContent={"center"}
             alignItems={"center"}
             padding={"10px"}
@@ -76,7 +78,7 @@ const BlogsContainer = () => {
           </Flex>
         </Flex>
         <Button
-          fontSize={"17px"}
+          fontSize={{base:"14px",md:"17px"}}
           fontWeight={700}
           color={"white"}
           px={"35px"}
@@ -95,10 +97,10 @@ const BlogsContainer = () => {
       </Flex>
       <Box
         position="absolute"
-        bottom="100px"
-        left="90px" 
-        right="90px" 
+        bottom={{base:"200px",md:"100px"}}
         height="470px"
+        width={"full"}
+        mx={"auto"}
         backgroundImage="url('image/blogs-container-bg.png')"
         backgroundSize="contain"
         backgroundPosition="center bottom"

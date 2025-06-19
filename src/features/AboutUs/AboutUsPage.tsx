@@ -7,7 +7,7 @@ import OfferCardContainer from "./components/OfferCardContainer";
 export default function AboutUsPage() {
   return (
     <>
-    <Box bg={"#0B0B0B"}>
+    <Box bg={"#0B0B0B"} id="AboutUs">
     <HeadingTitle/>
     <OfferCardContainer/>
     <BoxContainer/>

@@ -20,15 +20,15 @@ const CategoryToggle = () => {
   const [activeCategory, setActiveCategory] = useAtom(selectedCategory);
 
   return (
-    <Box width="100%" position={"relative"} padding="1"  bg={"#0B0B0B"} >
+    <Box width="100%" position={"relative"} padding="4"  bg={"#0B0B0B"} >
       <Flex
         
         overflowX="auto"
         whiteSpace="nowrap"
         gap="12px"
         alignItems="center"
-        justifyContent={{base:"start",md:"center"}}
-        paddingX={{base:"20px",md:"40px"}}
+        justifyContent={"start"}
+        px={{base:"20px",md:"40px"}}
         css={{
           "&::-webkit-scrollbar": { display: "none" },
           "-ms-overflow-style": "none",

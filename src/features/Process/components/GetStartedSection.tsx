@@ -4,39 +4,43 @@ const GetStartedSection = () => {
   return (
     <>
       <Box
-        px={"70px"}
+        px={{ base: "0px", md: "70px" }}
         backdropFilter="blur(12px)"
         bgGradient="to-t"
         gradientFrom="#000000"
         gradientVia="#223107"
         gradientTo="#000000"
-        py="100px"
+        py={{md:"100px"}}
       >
         <Box
-          py="200px"
+          py={{base:"140px",md:"200px"}}
           bgImage="url('image/getstart-section-bg.png')"
           bgSize="cover"
           bgPos="center"
           bgRepeat="no-repeat"
-          borderRadius={"40px"}
+          borderRadius={{ base: "none", md: "40px" }}
         >
           <Flex
-            px={"70px"}
+            px={{ base: "30px", md: "70px" }}
             flexDir={"column"}
-            justifyContent={"center"}
+            justifyContent={"space-between"}
             alignItems={"center"}
             textAlign={"center"}
             gap={"40px"}
           >
             <Heading
               fontWeight={900}
-              fontSize={"75px"}
+              fontSize={{ base: "24px", md: "75px" }}
               color={"white"}
-              mt={"50px"}
+              mt={{ base: "10px", md: "50px" }}
             >
               LET’S GET STARTED
             </Heading>
-            <Text fontSize={"26px"} fontWeight={400} color={"white"}>
+            <Text
+              fontSize={{ base: "12px", md: "26px" }}
+              fontWeight={400}
+              color={"white"}
+            >
               we're ready to turn your ideas into impact <br /> with smart tech
               and standout design.
             </Text>
@@ -46,7 +50,7 @@ const GetStartedSection = () => {
               px={"44px"}
               py={"22px"}
               fontWeight={700}
-              fontSize={"23px"}
+              fontSize={{ base: "13px", md: "23px" }}
               color={"black"}
               borderRadius={"13px"}
             >
@@ -55,7 +59,8 @@ const GetStartedSection = () => {
             <Flex
               justifyContent={"space-between"}
               alignItems={"center"}
-              gap={"70px"}
+              gap={{ base: "30px", md: "70px" }}
+              flexWrap={"wrap"}
             >
               <Flex
                 textAlign={"center"}
@@ -64,8 +69,15 @@ const GetStartedSection = () => {
                 justifyContent={"space-between"}
                 gap={"13px"}
               >
-                <Image src="svg/Process/strated-sec-icon01.svg" />
-                <Text fontWeight={700} fontSize={"17px"} color={"white"}>
+                <Image
+                  src="svg/Process/strated-sec-icon01.svg"
+                  maxW={{ base: "36px", md: "58px" }}
+                />
+                <Text
+                  fontWeight={700}
+                  fontSize={{ base: "10px", md: "17px" }}
+                  color={"white"}
+                >
                   Multiple services
                 </Text>
               </Flex>
@@ -76,8 +88,15 @@ const GetStartedSection = () => {
                 justifyContent={"space-between"}
                 gap={"13px"}
               >
-                <Image src="svg/Process/strated-sec-icon02.svg" />
-                <Text fontWeight={700} fontSize={"17px"} color={"white"}>
+                <Image
+                  src="svg/Process/strated-sec-icon02.svg"
+                  maxW={{ base: "36px", md: "58px" }}
+                />
+                <Text
+                  fontWeight={700}
+                  fontSize={{ base: "10px", md: "17px" }}
+                  color={"white"}
+                >
                   {" "}
                   Experienced team
                 </Text>
@@ -89,8 +108,15 @@ const GetStartedSection = () => {
                 justifyContent={"space-between"}
                 gap={"13px"}
               >
-                <Image src="svg/Process/strated-sec-icon03.svg" />
-                <Text fontWeight={700} fontSize={"17px"} color={"white"}>
+                <Image
+                  src="svg/Process/strated-sec-icon03.svg"
+                  maxW={{ base: "36px", md: "58px" }}
+                />
+                <Text
+                  fontWeight={700}
+                  fontSize={{ base: "10px", md: "17px" }}
+                  color={"white"}
+                >
                   Scalable solutions
                 </Text>
               </Flex>
@@ -101,8 +127,15 @@ const GetStartedSection = () => {
                 justifyContent={"space-between"}
                 gap={"13px"}
               >
-                <Image src="svg/Process/strated-sec-icon04.svg" />
-                <Text fontWeight={700} fontSize={"17px"} color={"white"}>
+                <Image
+                  src="svg/Process/strated-sec-icon04.svg"
+                  maxW={{ base: "36px", md: "58px" }}
+                />
+                <Text
+                  fontWeight={700}
+                  fontSize={{ base: "10px", md: "17px" }}
+                  color={"white"}
+                >
                   Planning till launch support
                 </Text>
               </Flex>
