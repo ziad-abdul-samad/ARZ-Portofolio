@@ -72,22 +72,22 @@ const IndustriesSection = () => {
             gap="15px"
           >
             <Box
-              width="40px"
-              height="40px"
-              minH={"40px"}
+              width={{base:"23px",md:"40px"}}
+              height={{base:"23px",md:"40px"}}
+              minH={{md:"40px"}}
               borderRadius="full"
               alignSelf="flex-end"
               bg={card.color}
               
             />
             <Image maxW="70px" pl="10px" src={card.icon}  />
-            <Heading fontWeight={700} color="white" fontSize="17px">
+            <Heading fontWeight={700} color="white" fontSize={{base:"12px",md:"17px"}}>
               {card.title}
             </Heading>
             <Text
               fontWeight={400}
               color="white"
-              fontSize="12px"
+              fontSize={{base:"10px",md:"12px"}}
               lineHeight="1.6"
             >
               {card.desc}

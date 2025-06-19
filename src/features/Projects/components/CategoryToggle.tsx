@@ -2,13 +2,11 @@ import { Box, Button, Flex } from "@chakra-ui/react";
 import { useAtom } from "jotai";
 import { selectedCategory } from "../store";
 
-// Define the type for a category
 interface Category {
   id: string;
   name: string;
 }
 
-// Array of categories with the defined type
 const CATEGORIES: Category[] = [
   { id: "All", name: "All" },
   { id: "Software Development", name: "Software Development" },
@@ -22,15 +20,15 @@ const CategoryToggle = () => {
   const [activeCategory, setActiveCategory] = useAtom(selectedCategory);
 
   return (
-    <Box width="100%" position={"relative"} padding="4"  bg={"#0B0B0B"} >
+    <Box width="100%" position={"relative"} padding="1"  bg={"#0B0B0B"} >
       <Flex
         
         overflowX="auto"
         whiteSpace="nowrap"
         gap="12px"
         alignItems="center"
-        justifyContent={"center"}
-        paddingX="40px"
+        justifyContent={{base:"start",md:"center"}}
+        paddingX={{base:"20px",md:"40px"}}
         css={{
           "&::-webkit-scrollbar": { display: "none" },
           "-ms-overflow-style": "none",
@@ -47,6 +45,7 @@ const CategoryToggle = () => {
             padding="18px 36px"
             fontWeight="normal"
             flexShrink="0"
+            fontSize={{base:"11px" , md:"16px"}}
           >
             {category.name}
           </Button>

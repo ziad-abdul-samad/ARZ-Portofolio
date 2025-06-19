@@ -52,8 +52,8 @@ const HomeSection01 = () => {
         initial={{ scale: 1, x: 0, y: 0 }}
         animate={{
           scale: [1, 1.2, 1],
-          // To Do: reduce x scaling on mobile screen
-          x: isMobile ? 0 : [0, -60, 0], // No x-axis movement on mobile
+          
+          x: isMobile ? [0 ,0 ,0] : [0, -60, 0], 
           y: [0, -30, 0],
         }}
         transition={{

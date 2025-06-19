@@ -7,7 +7,7 @@ const HeadingTitle = () => {
         flexDir={"column"}
         color={"white"}
         alignItems={"flex-start"}
-        px={"70px"}
+        px={{base:"30px",md:"70px"}}
         py={"100px"}
         position="relative" 
         zIndex={1}
@@ -22,13 +22,12 @@ const HeadingTitle = () => {
           minW="100%" 
           minH="100%" 
           objectFit="cover"
-          opacity={0.5}
         />
 
-        <Text as={"h1"} fontSize={{ lg: "60px" }} fontWeight={700}>
+        <Text as={"h1"} fontSize={{ base: "29px" , lg: "60px" }} fontWeight={700}>
           Projects
         </Text>
-        <Text fontSize={{ lg: "22px" }} fontWeight={300}>
+        <Text fontSize={{ base:"11px",lg: "22px" }} fontWeight={300}>
           See How We've Made a Difference
         </Text>
       </Flex>

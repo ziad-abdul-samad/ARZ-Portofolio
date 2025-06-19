@@ -76,7 +76,7 @@ export default function ProjectsCard() {
           <Flex direction="column" gap={10} px={{ base: 4, md: 8 }}>
             {/* Project Name - now always above images */}
             <Box>
-              <Heading fontSize="4xl" fontWeight="bold" color="#9FFE00">
+              <Heading fontSize={{base:"16px",md:"34px"}} fontWeight="bold" color="#9FFE00">
                 {projects[currentIndex].name}
               </Heading>
             </Box>
@@ -124,14 +124,14 @@ export default function ProjectsCard() {
 
                     {/* Description and Button */}
                     <Box py="40px">
-                      <Text fontWeight={300} fontSize="20px" color="white">
+                      <Text fontWeight={300} fontSize={{base:"12px",md:"20px"}} color="white">
                         {project.description}
                       </Text>
                       <Flex mt={6}>
                         <Button
                           color="#FFFDFD"
                           fontWeight={700}
-                          fontSize="17px"
+                          fontSize={{base:"12px",md:"17px"}}
                           borderRadius="9px"
                           px="30px"
                           py="25px"

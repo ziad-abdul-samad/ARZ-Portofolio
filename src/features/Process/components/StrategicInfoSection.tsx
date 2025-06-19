@@ -30,7 +30,7 @@ const Cards = [
 const StrategicInfoSection = () => {
   return (
     <>
-      <Box bg="black" py="50px" position="relative" overflow="hidden">
+      <Box bg="black" py={{base:"0px",md:"50px"}} position="relative" overflow="hidden">
         {/* Wrapper to control blur bleed */}
         <Box position="relative" textAlign="center" w="100%" h="300px">
           {/* Blurred background layer */}
@@ -59,9 +59,9 @@ const StrategicInfoSection = () => {
           />
 
           {/* Text content stays sharp */}
-          <Box position="relative" zIndex={2} py="50px">
+          <Box position="relative" zIndex={2} py={{base:"0px",md:"50px"}}>
             <Heading
-              fontSize="50px"
+              fontSize={{base:"18px",md:"50px"}}
               fontWeight="700"
               color="white"
               lineHeight="100%"
@@ -72,15 +72,15 @@ const StrategicInfoSection = () => {
         </Box>
       </Box>
       <Grid
-        gridTemplateColumns={["repeat(2, 1fr)"]}
+        gridTemplateColumns={{base:["repeat(1, 1fr)"],md:["repeat(2, 1fr)"]}}
         bg={"black"}
-        px={"90px"}
+        px={{base:"30px",md:"90px"}}
         pb={"50px"}
         placeItems="center"
-        gap={"40px"}
+        gap={{base:"28px",md:"40px"}}
       >
         {Cards.map((card, index) => (
-          <Flex pos={"relative"} key={index} flexDir={"column"} bg={"#151714"} overflow={"hidden"} borderRadius={"17px"} px={"20px"} py={"40px"} maxH={"245px"} h={"245px"}>
+          <Flex pos={"relative"} key={index} flexDir={"column"} bg={"#151714"} overflow={"hidden"} borderRadius={"17px"} px={"20px"} py={"40px"} maxH={"245px"} h={{md:"245px"}}>
             <Image pos={"absolute"} bottom={0} right={0} src="image/card-effect-strategy.png" />
             <Badge
               w={"fit"}
@@ -90,17 +90,17 @@ const StrategicInfoSection = () => {
               px={"15px"}
               py={"6px"}
               color={"#9FFE00"}
-              fontSize={"12px"}
+              fontSize={{base:"7px",md:"12px"}}
               fontWeight={400}
             >
               {card.badge}
             </Badge>
             <Flex justifyContent={"space-between"} alignItems={"flex-end"} gap={"10px"}>
                 <Flex flexDir={"column"} gap={"10px"} >
-                    <Heading fontSize={"20px"} fontWeight={700} color={"white"}>{card.title}</Heading>
-                    <Text maxW={"280px"} fontSize={"12px"} fontWeight={400} color={"white"}>{card.desc}</Text>
+                    <Heading fontSize={{base:"14px",md:"20px"}} fontWeight={700} color={"white"}>{card.title}</Heading>
+                    <Text maxW={"280px"} fontSize={{base:"9px",md:"12px"}} fontWeight={400} color={"white"}>{card.desc}</Text>
                 </Flex>
-                <Image src={card.icon}/>
+                <Image src={card.icon} maxW={{base:"58px" , md:"99px"}}/>
             </Flex>
           </Flex>
         ))}

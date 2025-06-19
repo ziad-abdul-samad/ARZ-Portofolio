@@ -20,22 +20,39 @@ const ProcessSection01 = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Text fontWeight={700} fontSize="56px" color="white">
+        <Text
+          fontWeight={700}
+          fontSize={{ base: "25px", md: "56px" }}
+          color="white"
+        >
           Our process
         </Text>
-        <Text fontWeight={700} fontSize="30px" color="white">
+        <Text
+          fontWeight={700}
+          fontSize={{ base: "13px", md: "30px" }}
+          color="white"
+        >
           From concept to{" "}
           <Text as="span" color="#9FFE00">
             completion
           </Text>
         </Text>
-        <Text fontWeight={400} fontSize="20px" color="white">
+        <Text
+          fontWeight={400}
+          fontSize={{ base: "12px", md: "20px" }}
+          color="white"
+        >
           Explore our streamlined process
         </Text>
       </Flex>
 
       {/* Animated images with larger sticky circles */}
-      <Flex justifyContent="center" alignItems="center" my={"20px"}>
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        my={"20px"}
+        px={{ base: "30px" }}
+      >
         {[
           {
             src: "svg/Process/yellow-rec-animate.svg",

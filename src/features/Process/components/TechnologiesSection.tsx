@@ -8,10 +8,10 @@ const TechnologiesSection = () => {
       bgSize="cover"
       bgPos="center"
       bgRepeat="no-repeat"
-      px="70px"
+      px={{base:"30px",md:"70px"}}
       py="50px"
       position="relative"
-      h={"655px"}
+      h={{md:"655px"}}
     >
       <Flex
         flexDir="column"
@@ -19,12 +19,12 @@ const TechnologiesSection = () => {
         alignItems="center"
         gap="45px"
       >
-        <Heading fontSize="57px" fontWeight={700} color="white">
+        <Heading fontSize={{base:"21px",md:"57px"}} fontWeight={700} color="white" textAlign={{base:"center" , md:"left"}}>
           Technologies we use
         </Heading>
         <Text
           maxW="818px"
-          fontSize="22px"
+          fontSize={{base:"11px",md:"22px"}}
           fontWeight={300}
           color="white"
           textAlign="center"
@@ -35,7 +35,7 @@ const TechnologiesSection = () => {
           </Text>
           tailored to your needs.
         </Text>
-        <Image mt={"143px"} src="svg/Process/technologies-icons.svg"/>
+        <Image mt={{base:"0",md:"143px"}} src="svg/Process/technologies-icons.svg"/>
       </Flex>
     </Box>
   );
